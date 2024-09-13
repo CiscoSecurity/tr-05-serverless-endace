@@ -6,7 +6,7 @@ echo
 echo " Development Dockerfile build script."
 echo
 
-module_name="Shodan"
+module_name="Endace"
 image_name="tr-05-shodan"
 
 CONFIG_FILE=code/container_settings.json

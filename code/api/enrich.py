@@ -15,9 +15,9 @@ get_observables = partial(get_json, schema=ObservableSchema(many=True))
 def get_browse_pivot(ip):
     return {
         'id': f'ref-endace-detail-ip-{ip}',
-        'title': 'Browse IP',
+        'title': 'Search Packets for IP',
         'description': 'Pivot to EndaceVision using this IP',
-        'url': current_app.config['ENDACE_BROWSE_URL'].format(ip=ip),
+        'url': current_app.config['ENDACE_SEARCH_URL'].format(endaceprobe_fqdn=current_app.config['HOST'], ip=ip),
         'categories': ['Browse', 'Endace'],
     }
 

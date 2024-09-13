@@ -22,10 +22,10 @@
   ],
   "configuration_spec": [ 
     {
-      "key": "custom_url",
+      "key": "custom_HOST",
       "type": "string",
       "label": "Target Probe",
-      "tooltip": "FQDN of EndaceProbe pivot links will target",
+      "tooltip": "FQDN of EndaceProbe on which Investigations will be opened.  It is suggested that this be an InvestigationManager in multi-Probe estates.",
       "required": true
     }
   ],
