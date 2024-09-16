@@ -7,8 +7,6 @@ from api.schemas import ObservableSchema
 from api.utils import get_json, jsonify_data
 
 enrich_api = Blueprint('enrich', __name__)
-
-
 get_observables = partial(get_json, schema=ObservableSchema(many=True))
 
 
@@ -20,6 +18,7 @@ def get_browse_pivot(ip):
         'url': current_app.config['ENDACE_SEARCH_URL'].format(endaceprobe_fqdn=current_app.config['HOST'], ip=ip),
         'categories': ['Browse', 'Endace'],
     }
+
 
 @enrich_api.route('/refer/observables', methods=['POST'])
 def refer_observables():

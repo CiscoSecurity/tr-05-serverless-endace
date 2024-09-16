@@ -4,7 +4,7 @@ NOT_FOUND = 'not found'
 INTERNAL = 'internal error'
 HEALTH_CHECK_ERROR = 'health check failed'
 
-# TODO: work through these errors and remove any not called from elsewhere
+
 class CTRBaseError(Exception):
     def __init__(self, code, message, type_='fatal'):
         super().__init__()

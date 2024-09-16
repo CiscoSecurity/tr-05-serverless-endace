@@ -12,9 +12,8 @@ from api.errors import (
 
 health_api = Blueprint('health', __name__)
 
+
 # TODO: connect to probe URL and check for valid response.
 @health_api.route('/health', methods=['POST'])
 def health():
     return jsonify_data({'status': 'ok'})
-
-
