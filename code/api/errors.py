@@ -23,7 +23,7 @@ class EndaceUnexpectedError(CTRBaseError):
     def __init__(self, response):
         super().__init__(
             response.reason,
-            'An error occurred on the Endace side.'
+            'An unexpected error occurred trying to connect to the target EndaceProbe.'
         )
 
 
@@ -31,7 +31,7 @@ class EndaceInternalServerError(CTRBaseError):
     def __init__(self):
         super().__init__(
             INTERNAL,
-            'The Endace internal error occurred.'
+            'An internal Error occurred on the target EndaceProbe.'
         )
 
 
@@ -39,7 +39,7 @@ class EndaceNotFoundError(CTRBaseError):
     def __init__(self):
         super().__init__(
             NOT_FOUND,
-            'The Endace not found error occurred.'
+            'Cannot connect to EndaceProbe specified in module configuration.'
         )
 
 

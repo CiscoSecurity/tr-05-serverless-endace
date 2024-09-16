@@ -40,7 +40,7 @@
     }
   ],
   "properties": {
-    "url": "https://ciscohosted.url",
+    "url": "https://localhost",
     "supported-apis": [
       "health",
       "refer/observables"

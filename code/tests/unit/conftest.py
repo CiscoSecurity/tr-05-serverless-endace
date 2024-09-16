@@ -34,22 +34,12 @@ def success_expected_payload(route, client):
                 {
                     "categories": [
                         "Search",
-                        "Shodan"
+                        "Endace"
                     ],
-                    "description": "Lookup this IP on Shodan",
+                    "description": "Generate a Pivot-to-Vision URL from this IP address",
                     "id": "ref-shodan-search-ip-185.53.179.29",
-                    "title": "Search for this IP",
-                    "url": "https://www.shodan.io/search?query=185.53.179.29"
-                },
-                {
-                    "categories": [
-                        "Browse",
-                        "Shodan"
-                    ],
-                    "description": "Browse this IP on Shodan",
-                    "id": "ref-shodan-detail-ip-185.53.179.29",
-                    "title": "Browse IP",
-                    "url": "https://www.shodan.io/host/185.53.179.29"
+                    "title": "Create link for this IP",
+                    "url": "localhost/vision2/v1/pivotintovision/?datasources=tag%3Arotation-file%26title=Pivot%20from%20XDR%26ip=185.53.179.29%26tools=conversations_by_ipaddress"
                 }
             ]
         }
