@@ -1,4 +1,3 @@
-import jwt
 import requests
 from flask import request, jsonify
 from api.errors import BadRequestError
