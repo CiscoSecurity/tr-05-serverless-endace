@@ -13,6 +13,9 @@ class Config:
     }
 
     ENDACE_SEARCH_URL = '{endaceprobe_fqdn}/vision2/v1/pivotintovision/?datasources=tag%3Arotation-file%26title=Pivot%20from%20XDR%26ip={ip}%26tools=conversations_by_ipaddress'
+    
+    # Temporary for unit testing - remove for production
+    HOST = 'https://myprobe.somedomain.com'
 
     ENDACE_OBSERVABLE_TYPES = {
         'ip': 'IP'
