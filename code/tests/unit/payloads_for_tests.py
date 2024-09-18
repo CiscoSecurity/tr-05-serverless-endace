@@ -2,7 +2,7 @@ EXPECTED_RESPONSE_404_ERROR = {
     'errors': [
         {
             'code': 'not found',
-            'message': 'The Shodan not found error occurred.',
+            'message': 'Cannot connect to EndaceProbe specified in module configuration.',
             'type': 'fatal'
         }
     ]
@@ -12,7 +12,7 @@ EXPECTED_RESPONSE_500_ERROR = {
     'errors': [
         {
             'code': 'internal error',
-            'message': 'The Shodan internal error occurred.',
+            'message': 'An internal Error occurred on the target EndaceProbe.',
             'type': 'fatal'
         }
     ]
