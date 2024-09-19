@@ -1,17 +1,9 @@
 [![Gitter Chat](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/CiscoSecurity/Threat-Response "Gitter Chat")
 
-# NOTE! This code has been upgraded and the current release no longer supports installation in AWS
-If you wish to deploy in AWS, use [this](https://github.com/CiscoSecurity/tr-05-serverless-shodan/releases/tag/v1.1.2) previous release.
+# Endace Relay (Cisco Hosted)
 
-# Shodan Relay (Cisco Hosted)
-
-A Cisco SecureX Concrete Relay implementation using 
-[Shodan](https://www.shodan.io/)
-as a third-party Cyber Threat Intelligence service provider.
-
-The Relay itself is just a simple application written in Python that can be easily packaged and deployed.  This relay is now Cisco Hosted and no longer requires AWS Lambda.
-
-The code is provided here purely for educational purposes.
+A Cisco XDR Relay implementation using [Endace](https://www.endace.com/) for full packet forensic analysis.  This implementeation
+is based on the Cisco Shodan relay.
 
 ## Rationale
 
@@ -50,19 +42,19 @@ In order to build the application, we need to use a `Dockerfile`.
  1. Open a terminal.  Build the container image using the `docker build` command.
 
 ```
-docker build -t tr-05-shodan .
+docker build -t tr-05-endace .
 ```
 
  2. Once the container is built, and an image is successfully created, start your container using the `docker run` command and specify the name of the image we have just created.  By default, the container will listen for HTTP requests using port 9090.
 
 ```
-docker run -dp 9090:9090 --name tr-05-shodan tr-05-shodan
+docker run -dp 9090:9090 --name tr-05-endace tr-05-endace
 ```
 
  3. Watch the container logs to ensure it starts correctly.
 
 ```
-docker logs tr-05-shodan
+docker logs tr-05-endace
 ```
 
  4. Once the container has started correctly, open your web browser to http://localhost:9090.  You should see a response from the container.
@@ -82,10 +74,8 @@ This application was developed and tested under Python version 3.9.
 
 - `POST /refer/observables`
   - Accepts a list of observables and filters out unsupported ones.
-  - Builds a search link per each supported observable to pivot back to the
+  - Builds an Endace Pivot-to-Vision link per each supported observable to pivot back to the
   underlying external service and look up the observable there.
-  - Builds a browse link per each supported observable to pivot back
-  directly to the observable page.
   - Returns a list of those links.
   
 - `POST /version`
@@ -94,4 +84,3 @@ This application was developed and tested under Python version 3.9.
 ### Supported Types of Observables
 
 - `ip`
-- `domain`
