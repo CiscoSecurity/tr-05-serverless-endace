@@ -1,1 +1,4 @@
 tr-05-serverless-endace.code-workspace
+.venv
+__pycache__
+.coverage

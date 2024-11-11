@@ -40,7 +40,7 @@ def handle_error(exception):
 @app.errorhandler(CTRBaseError)
 def handle_tr_formatted_error(error):
     app.logger.error(traceback.format_exc())
-    return jsonify_errors(error.json)
+    return jsonify_errors(error)
 
 
 if __name__ == '__main__':

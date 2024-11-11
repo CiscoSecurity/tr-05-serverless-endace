@@ -1,6 +1,7 @@
 from http import HTTPStatus
 from pytest import fixture
-from tests.unit.payloads_for_tests import EXPECTED_WATCHDOG_ERROR
+from .utils import headers
+from tests.unit.mock_for_tests import EXPECTED_WATCHDOG_ERROR
 
 
 def routes():
@@ -11,13 +12,12 @@ def routes():
 def route(request):
     return request.param
 
-
 @fixture(scope='module')
 def expected_payload(client):
     return {'data': 'test'}
 
-
 def test_watchdog_call_success(route, client, expected_payload):
+    
     response = client.get(route, headers={'Health-Check': 'test'})
 
     assert response.status_code == HTTPStatus.OK

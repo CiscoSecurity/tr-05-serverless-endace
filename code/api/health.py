@@ -2,18 +2,23 @@ import requests
 from http import HTTPStatus
 from flask import Blueprint, current_app
 
-from api.utils import jsonify_data
+from api.utils import jsonify_data, get_key
 from api.errors import (
-    EndaceUnexpectedError,
-    EndaceInternalServerError,
-    EndaceNotFoundError,
-    EndaceSSLError
+    AuthenticationRequiredError,
+    UnexpectedError,
+    InternalServerError,
+    NotFoundError,
+    SSLError
 )
 
 health_api = Blueprint('health', __name__)
 
-
-# TODO: connect to probe URL and check for valid response.
 @health_api.route('/health', methods=['POST'])
 def health():
+    
+    key = get_key()
+
+    if key is None:
+        raise AuthenticationRequiredError
+    
     return jsonify_data({'status': 'ok'})
